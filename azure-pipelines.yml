@@ -7,11 +7,6 @@ trigger:
 - master
 
 pool: PipeLineAgent
-  
-
-variables:
-  buildConfiguration: 'Release'
-
 steps:
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
@@ -21,3 +16,5 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
     publishLocation: 'Container'
+  
+    
